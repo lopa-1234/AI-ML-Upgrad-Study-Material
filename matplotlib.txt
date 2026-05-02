@@ -1,0 +1,22 @@
+plt.scatter(profit[product_category == "Technology"], sales[product_category == "Technology"], 
+            c= 'Green', alpha= 0.7, s = 150, label="Technology" )
+
+plt.scatter(profit[product_category == "Office Supplies"], sales[product_category == "Office Supplies"], 
+            c= 'Yellow', alpha= 0.7, s = 100, label="Office Supplies" )
+
+plt.scatter(profit[product_category == "Furniture"], sales[product_category == "Furniture"], 
+            c= 'Cyan', alpha= 0.7, s = 50, label="Furniture" )
+
+for xy in zip (profit[country == "India"], sales[country == "India"]):
+    plt.annotate(text = "India", xy = xy)
+
+# Adding and formatting title
+plt.title("Sales versus Profits across various Countries and Product Categories\n", fontdict={'fontsize': 20, 'fontweight' : 5, 'color' : 'Green'})
+
+# Labeling Axes
+plt.xlabel("Profit", fontdict={'fontsize': 12, 'fontweight' : 5, 'color' : 'Brown'})
+plt.ylabel("Sales", fontdict={'fontsize': 12, 'fontweight' : 5, 'color' : 'Brown'})
+
+plt.legend()
+
+plt.show()
